@@ -1,5 +1,5 @@
 import { useMutation } from 'react-query';
-import { joinUser } from 'apis/generator.api';
+import { joinStudentCouncil } from 'apis/join.api';
 import { useNavigate } from 'react-router-dom';
 import { Dispatch, SetStateAction } from 'react';
 import { JoinType } from 'types/auth.type';
@@ -12,7 +12,7 @@ interface JoinFeatureType {
 export const JoinFeature = ({ setJoinData, joinData }: JoinFeatureType) => {
   const navigate = useNavigate();
 
-  const { mutate } = useMutation(joinUser, {
+  const { mutate } = useMutation(joinStudentCouncil, {
     onSuccess: () => {
       alert('회원가입 성공');
       navigate('/login');
