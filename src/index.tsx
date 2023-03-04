@@ -1,12 +1,22 @@
-import React from "react";
-import ReactDOM from "react-dom/client";
-import App from "./App";
+import ReactDOM from 'react-dom/client';
+import { QueryClient, QueryClientProvider } from 'react-query';
+import GlobalStyled from 'styles/global.style';
+import { RecoilRoot } from 'recoil';
+import { BrowserRouter } from 'react-router-dom';
+import 'react-toastify/dist/ReactToastify.css';
+import App from './App';
 
+const queryClient = new QueryClient();
 const root = ReactDOM.createRoot(
-  document.getElementById("root") as HTMLElement
+  document.getElementById('root') as HTMLElement,
 );
 root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
+  <BrowserRouter>
+    <RecoilRoot>
+      <QueryClientProvider client={queryClient}>
+        <App />
+        <GlobalStyled />
+      </QueryClientProvider>
+    </RecoilRoot>
+  </BrowserRouter>,
 );
