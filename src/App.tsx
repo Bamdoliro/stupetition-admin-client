@@ -1,4 +1,4 @@
-import Login from 'components/auth/Login';
+import Login from 'components/layout/Login';
 import { Route, Routes } from 'react-router-dom';
 
 const App = () => {

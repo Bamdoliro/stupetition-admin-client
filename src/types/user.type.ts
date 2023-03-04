@@ -1,7 +1,5 @@
-export interface UserDataType {
+export interface AdminDataType {
   accessToken: string;
   refreshToken: string;
   authority: string;
-  schoolName: string;
-  username: string;
 }
