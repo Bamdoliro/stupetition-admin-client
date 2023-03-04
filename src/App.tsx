@@ -1,5 +1,12 @@
+import Login from 'components/auth/Login';
+import { Route, Routes } from 'react-router-dom';
+
 const App = () => {
-  return <div>asd</div>;
+  return (
+    <Routes>
+      <Route path="/" element={<Login />} />
+    </Routes>
+  );
 };
 
 export default App;

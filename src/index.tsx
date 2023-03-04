@@ -3,7 +3,6 @@ import { QueryClient, QueryClientProvider } from 'react-query';
 import GlobalStyled from 'styles/global.style';
 import { RecoilRoot } from 'recoil';
 import { BrowserRouter } from 'react-router-dom';
-import 'react-toastify/dist/ReactToastify.css';
 import App from './App';
 
 const queryClient = new QueryClient();
