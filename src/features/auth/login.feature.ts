@@ -15,11 +15,14 @@ export const LoginFeature = ({ loginData }: LoginFeatureType) => {
   const navigate = useNavigate();
   const setUserData = useSetRecoilState(userState);
 
+  console.log(loginData);
+
   const loginMutate = useMutation(loginUser, {
     onSuccess: (res) => {
       const { accessToken, refreshToken } = res;
       const { authority, schoolName, username } = res.user;
 
+      alert('로그인 성공');
       localStorage.setItem(AUTHORITY, authority);
       localStorage.setItem(SCHOOL_NAME, schoolName);
       localStorage.setItem(ACCESS_KEY, accessToken);
