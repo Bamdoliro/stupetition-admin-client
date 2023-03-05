@@ -5,7 +5,7 @@ import * as KEY from 'constants/key.constant';
 interface SchoolType {
   name: string;
   id: number;
-  emailDomain: string;
+  abbreviation: string;
 }
 
 export const SchoolFeature = (searchWord: string) => {

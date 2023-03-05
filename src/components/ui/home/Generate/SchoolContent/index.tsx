@@ -31,6 +31,8 @@ const SchoolContent = ({
     });
   };
 
+  console.log(data);
+
   return (
     <S.SchoolContent>
       <S.Wrap>
@@ -49,7 +51,7 @@ const SchoolContent = ({
                 key={item.id}
                 name={item.name}
                 id={item.id}
-                emailDomain={item.emailDomain}
+                abbreviation={item.abbreviation}
                 onChange={handleClickRadio}
               />
             );

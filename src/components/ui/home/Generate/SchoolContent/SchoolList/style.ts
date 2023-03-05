@@ -21,7 +21,7 @@ export const SchoolName = styled(T.p2)`
   color: ${color.gray900};
 `;
 
-export const Email = styled(T.caption)`
+export const Abbreviation = styled(T.caption)`
   color: ${color.gray500};
 `;
 

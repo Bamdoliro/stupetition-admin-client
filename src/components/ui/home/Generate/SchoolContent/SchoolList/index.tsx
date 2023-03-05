@@ -4,16 +4,16 @@ import * as S from './style';
 interface SchoolListType {
   name: string;
   id: number;
-  emailDomain: string;
+  abbreviation: string;
   onChange: ChangeEventHandler<HTMLInputElement>;
 }
 
-const SchoolList = ({ name, id, emailDomain, onChange }: SchoolListType) => {
+const SchoolList = ({ name, id, abbreviation, onChange }: SchoolListType) => {
   return (
     <S.SchoolList>
       <S.ListWrap>
         <S.SchoolName>{name}</S.SchoolName>
-        <S.Email>@{emailDomain}</S.Email>
+        <S.Abbreviation>{abbreviation}</S.Abbreviation>
       </S.ListWrap>
       <S.Button>
         <S.RadioInput
