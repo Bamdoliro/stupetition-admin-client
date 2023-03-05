@@ -5,7 +5,7 @@ export interface LoginType {
   password: string;
 }
 
-export interface JoinType {
+export interface GeneratorType {
   username: string;
   password: string;
   rePassword: string;
@@ -13,8 +13,8 @@ export interface JoinType {
   schoolName: string;
 }
 
-export interface JoinContentsPropsType {
+export interface GeneratorContentsPropsType {
   setSearchSchoolOpen: Dispatch<SetStateAction<boolean>>;
-  setJoinData: Dispatch<SetStateAction<JoinType>>;
-  joinData: JoinType;
+  setGeneratorData: Dispatch<SetStateAction<GeneratorType>>;
+  generatorData: GeneratorType;
 }

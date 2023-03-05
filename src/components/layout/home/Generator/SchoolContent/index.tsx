@@ -1,28 +1,28 @@
 import SearchInput from 'components/common/SearchInput';
 import Button from 'components/common/Button';
 import { ChangeEvent, useState } from 'react';
-import { JoinContentsPropsType } from 'types/auth.type';
+import { GeneratorContentsPropsType } from 'types/auth.type';
 import { SchoolFeature } from 'features/home/school.feature';
 import SchoolList from './SchoolList';
 import * as S from './style';
 
 const SchoolContent = ({
   setSearchSchoolOpen,
-  setJoinData,
-  joinData,
-}: JoinContentsPropsType) => {
+  setGeneratorData,
+  generatorData,
+}: GeneratorContentsPropsType) => {
   const [searchWord, setSearchWord] = useState('');
   const { data, isLoading } = SchoolFeature(searchWord);
 
   const handleClickRadio = (e: ChangeEvent<HTMLInputElement>) => {
     const schoolName = e.target.id;
     const schoolId = Number(e.target.value);
-    setJoinData({ ...joinData, schoolName, schoolId });
+    setGeneratorData({ ...generatorData, schoolName, schoolId });
   };
 
   const cancel = () => {
     setSearchSchoolOpen(true);
-    setJoinData({
+    setGeneratorData({
       username: '',
       password: '',
       rePassword: '',

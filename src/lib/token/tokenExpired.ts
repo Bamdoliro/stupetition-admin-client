@@ -15,6 +15,6 @@ export const tokenExpired = async () => {
     console.log(err);
     alert('세션이 만료되었습니다');
     localStorage.clear();
-    navigate('/login');
+    navigate('/');
   }
 };
