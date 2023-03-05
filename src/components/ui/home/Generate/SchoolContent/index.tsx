@@ -3,6 +3,7 @@ import Button from 'components/common/Button';
 import { ChangeEvent, useState } from 'react';
 import { GenerateContentsPropsType } from 'types/auth.type';
 import { SchoolFeature } from 'features/home/school.feature';
+import Loading from 'pages/Loading';
 import SchoolList from './SchoolList';
 import * as S from './style';
 
@@ -45,6 +46,7 @@ const SchoolContent = ({
           onChange={(e) => setSearchWord(e.target.value)}
         />
         <S.SchoolWrap>
+          {isLoading && <Loading />}
           {data.map((item) => {
             return (
               <SchoolList
