@@ -1,7 +1,12 @@
 import { useQuery } from 'react-query';
 import { searchSchool } from 'apis/school.api';
-import { SchoolType } from 'types/school.type';
 import * as KEY from 'constants/key.constant';
+
+interface SchoolType {
+  name: string;
+  id: number;
+  emailDomain: string;
+}
 
 export const SchoolFeature = (searchWord: string) => {
   const { data, isLoading } = useQuery<SchoolType[]>(
