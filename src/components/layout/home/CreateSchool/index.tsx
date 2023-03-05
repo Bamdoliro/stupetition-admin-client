@@ -1,18 +1,17 @@
 import Button from 'components/common/Button';
 import Input from 'components/common/Input';
+import { CreateSchoolFeature } from 'features/home/createSchool.feature';
 import { ChangeEvent, useState } from 'react';
+import { SchoolDataType } from 'types/school.type';
 import * as S from './style';
-
-interface SchoolDataType {
-  name: string;
-  abbreviation: string;
-}
 
 const CreateSchool = () => {
   const [schoolData, setSchoolData] = useState<SchoolDataType>({
     name: '',
     abbreviation: '',
   });
+
+  const { create } = CreateSchoolFeature(schoolData);
 
   const onChange = (e: ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
@@ -42,7 +41,7 @@ const CreateSchool = () => {
           />
         </S.InputWrap>
         <Button
-          onClick={() => console.log('생성')}
+          onClick={create}
           option="FILLED"
           padding="12px 22px"
           width="174px"
