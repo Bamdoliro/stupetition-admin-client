@@ -6,7 +6,7 @@ export interface LoginType {
 }
 
 export interface JoinType {
-  email: string;
+  username: string;
   password: string;
   rePassword: string;
   schoolId: number;

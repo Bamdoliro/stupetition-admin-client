@@ -34,7 +34,7 @@ export const JoinFeature = ({ setJoinData, joinData }: JoinFeatureType) => {
       alert('비밀번호가 맞지 않습니다');
     }
     setJoinData({
-      email: '',
+      username: '',
       password: '',
       rePassword: '',
       schoolId: 0,

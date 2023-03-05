@@ -2,9 +2,9 @@ import { customAxios } from 'lib/axios/customAxios';
 import { JoinType } from 'types/auth.type';
 
 export const joinStudentCouncil = async ({
-  email,
+  username,
   password,
   schoolId,
 }: JoinType) => {
-  await customAxios.post('/user', { email, password, schoolId });
+  await customAxios.post('/user', { username, password, schoolId });
 };
