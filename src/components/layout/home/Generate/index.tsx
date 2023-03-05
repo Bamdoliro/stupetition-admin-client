@@ -1,10 +1,10 @@
 import { useState } from 'react';
-import { GeneratorType } from 'types/auth.type';
-import GeneratorContent from './GenratorContent';
+import { GenerateType } from 'types/auth.type';
+import GenerateContent from './GenrateContent';
 import SchoolContent from './SchoolContent';
 
-const Generator = () => {
-  const [generatorData, setGeneratorData] = useState<GeneratorType>({
+const Generate = () => {
+  const [generateData, setGenerateData] = useState<GenerateType>({
     username: '',
     password: '',
     rePassword: '',
@@ -14,18 +14,18 @@ const Generator = () => {
   const [searchSchoolIsOpen, setSearchSchoolOpen] = useState(true);
 
   return searchSchoolIsOpen ? (
-    <GeneratorContent
+    <GenerateContent
       setSearchSchoolOpen={setSearchSchoolOpen}
-      setGeneratorData={setGeneratorData}
-      generatorData={generatorData}
+      setGenerateData={setGenerateData}
+      generateData={generateData}
     />
   ) : (
     <SchoolContent
       setSearchSchoolOpen={setSearchSchoolOpen}
-      setGeneratorData={setGeneratorData}
-      generatorData={generatorData}
+      setGenerateData={setGenerateData}
+      generateData={generateData}
     />
   );
 };
 
-export default Generator;
+export default Generate;

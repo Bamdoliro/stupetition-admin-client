@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import * as T from 'styles/text.style';
 import { color } from 'styles/theme.style';
 
-export const GeneratorContent = styled.div`
+export const GenerateContent = styled.div`
   width: 64%;
   height: 75.5%;
 `;

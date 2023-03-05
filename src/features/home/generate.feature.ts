@@ -2,17 +2,17 @@ import { useMutation } from 'react-query';
 import { generateStudentCouncil } from 'apis/generate.api';
 import { useNavigate } from 'react-router-dom';
 import { Dispatch, SetStateAction } from 'react';
-import { GeneratorType } from 'types/auth.type';
+import { GenerateType } from 'types/auth.type';
 
-interface GeneratorFeatureType {
-  setGeneratorData: Dispatch<SetStateAction<GeneratorType>>;
-  generatorData: GeneratorType;
+interface GenerateFeatureType {
+  setGenerateData: Dispatch<SetStateAction<GenerateType>>;
+  generateData: GenerateType;
 }
 
-export const GeneratorFeature = ({
-  setGeneratorData,
-  generatorData,
-}: GeneratorFeatureType) => {
+export const GenerateFeature = ({
+  setGenerateData,
+  generateData,
+}: GenerateFeatureType) => {
   const navigate = useNavigate();
 
   const { mutate } = useMutation(generateStudentCouncil, {
@@ -26,17 +26,17 @@ export const GeneratorFeature = ({
   });
 
   const generate = () => {
-    const { password, rePassword, schoolId } = generatorData;
+    const { password, rePassword, schoolId } = generateData;
     if (password === rePassword) {
       if (schoolId !== 0) {
-        mutate(generatorData);
+        mutate(generateData);
       } else {
         alert('학교를 선택 해주세요');
       }
     } else {
       alert('비밀번호가 맞지 않습니다');
     }
-    setGeneratorData({
+    setGenerateData({
       username: '',
       password: '',
       rePassword: '',

@@ -1,27 +1,27 @@
-import { GeneratorContentsPropsType } from 'types/auth.type';
+import { GenerateContentsPropsType } from 'types/auth.type';
 import Input from 'components/common/Input';
 import SearchInput from 'components/common/SearchInput';
 import Button from 'components/common/Button';
-import { GeneratorFeature } from 'features/home/generate.feature';
+import { GenerateFeature } from 'features/home/generate.feature';
 import { ChangeEvent } from 'react';
 import { useNavigate } from 'react-router-dom';
 import * as S from './style';
 
-const GeneratorContent = ({
+const GenerateContent = ({
   setSearchSchoolOpen,
-  setGeneratorData,
-  generatorData,
-}: GeneratorContentsPropsType) => {
+  setGenerateData,
+  generateData,
+}: GenerateContentsPropsType) => {
   const navigate = useNavigate();
-  const { generate } = GeneratorFeature({ setGeneratorData, generatorData });
+  const { generate } = GenerateFeature({ setGenerateData, generateData });
 
   const onChange = (e: ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
-    setGeneratorData({ ...generatorData, [name]: value });
+    setGenerateData({ ...generateData, [name]: value });
   };
 
   return (
-    <S.GeneratorContent>
+    <S.GenerateContent>
       <S.Wrap>
         <S.Title>학생회 계정 생성</S.Title>
         <S.InputWrap>
@@ -30,7 +30,7 @@ const GeneratorContent = ({
             placeholder="학생회 아이디를 입력해주세요"
             type="text"
             name="username"
-            value={generatorData.username}
+            value={generateData.username}
             onChange={onChange}
           />
           <Input
@@ -38,7 +38,7 @@ const GeneratorContent = ({
             placeholder="비밀번호를 입력해주세요"
             type="password"
             name="password"
-            value={generatorData.password}
+            value={generateData.password}
             onChange={onChange}
           />
           <Input
@@ -46,7 +46,7 @@ const GeneratorContent = ({
             placeholder="비밀번호를 다시 입력해주세요"
             type="password"
             name="rePassword"
-            value={generatorData.rePassword}
+            value={generateData.rePassword}
             onChange={onChange}
           />
           <SearchInput
@@ -75,8 +75,8 @@ const GeneratorContent = ({
           />
         </S.ButtonWrap>
       </S.Wrap>
-    </S.GeneratorContent>
+    </S.GenerateContent>
   );
 };
 
-export default GeneratorContent;
+export default GenerateContent;

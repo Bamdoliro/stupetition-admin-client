@@ -5,7 +5,7 @@ export interface LoginType {
   password: string;
 }
 
-export interface GeneratorType {
+export interface GenerateType {
   username: string;
   password: string;
   rePassword: string;
@@ -13,8 +13,8 @@ export interface GeneratorType {
   schoolName: string;
 }
 
-export interface GeneratorContentsPropsType {
+export interface GenerateContentsPropsType {
   setSearchSchoolOpen: Dispatch<SetStateAction<boolean>>;
-  setGeneratorData: Dispatch<SetStateAction<GeneratorType>>;
-  generatorData: GeneratorType;
+  setGenerateData: Dispatch<SetStateAction<GenerateType>>;
+  generateData: GenerateType;
 }
