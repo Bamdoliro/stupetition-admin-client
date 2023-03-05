@@ -19,17 +19,11 @@ export const LoginFeature = ({ loginData }: LoginFeatureType) => {
     onSuccess: (res) => {
       const { accessToken, refreshToken } = res;
       const { authority } = res.user;
-
-      alert('로그인 성공');
       localStorage.setItem(AUTHORITY, authority);
       localStorage.setItem(ACCESS_KEY, accessToken);
       localStorage.setItem(REFRESH_KEY, refreshToken);
-      setUserData({
-        accessToken,
-        refreshToken,
-        authority,
-      });
-      navigate('/');
+      setUserData({ accessToken, refreshToken, authority });
+      navigate('/main/genrator');
     },
     onError: (err) => {
       console.log(err);

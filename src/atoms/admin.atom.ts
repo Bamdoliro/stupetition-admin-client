@@ -1,7 +1,12 @@
 import { ACCESS_KEY, REFRESH_KEY } from 'constants/token.constant';
 import { AUTHORITY } from 'constants/user.constant';
 import { atom } from 'recoil';
-import { AdminDataType } from 'types/user.type';
+
+interface AdminDataType {
+  accessToken: string;
+  refreshToken: string;
+  authority: string;
+}
 
 export const adminState = atom<AdminDataType>({
   key: 'admin',

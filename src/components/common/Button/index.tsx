@@ -1,5 +1,13 @@
-import { ButtonPropsType } from 'types/common/button.type';
+import { ButtonHTMLAttributes } from 'react';
 import * as S from './style';
+
+export type ButtonOptionType = 'UNFILLED' | 'FILLED' | 'SCARCE_FILLED';
+
+interface ButtonPropsType extends ButtonHTMLAttributes<HTMLButtonElement> {
+  padding: string;
+  width: string;
+  option: ButtonOptionType;
+}
 
 const Button = ({
   onClick,
