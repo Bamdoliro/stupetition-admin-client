@@ -1,10 +1,10 @@
 import { useState } from 'react';
-import { JoinType } from 'types/auth.type';
-import JoinContent from './JoinContent';
+import { GenerateType } from 'types/auth.type';
+import GenerateContent from './GenrateContent';
 import SchoolContent from './SchoolContent';
 
-const Join = () => {
-  const [joinData, setJoinData] = useState<JoinType>({
+const Generate = () => {
+  const [generateData, setGenerateData] = useState<GenerateType>({
     username: '',
     password: '',
     rePassword: '',
@@ -14,18 +14,18 @@ const Join = () => {
   const [searchSchoolIsOpen, setSearchSchoolOpen] = useState(true);
 
   return searchSchoolIsOpen ? (
-    <JoinContent
+    <GenerateContent
       setSearchSchoolOpen={setSearchSchoolOpen}
-      setJoinData={setJoinData}
-      joinData={joinData}
+      setGenerateData={setGenerateData}
+      generateData={generateData}
     />
   ) : (
     <SchoolContent
       setSearchSchoolOpen={setSearchSchoolOpen}
-      setJoinData={setJoinData}
-      joinData={joinData}
+      setGenerateData={setGenerateData}
+      generateData={generateData}
     />
   );
 };
 
-export default Join;
+export default Generate;

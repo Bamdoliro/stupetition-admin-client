@@ -1,27 +1,27 @@
-import { JoinContentsPropsType } from 'types/auth.type';
+import { GenerateContentsPropsType } from 'types/auth.type';
 import Input from 'components/common/Input';
 import SearchInput from 'components/common/SearchInput';
 import Button from 'components/common/Button';
-import { JoinFeature } from 'features/home/join.feature';
+import { GenerateFeature } from 'features/home/generate.feature';
 import { ChangeEvent } from 'react';
 import { useNavigate } from 'react-router-dom';
 import * as S from './style';
 
-const JoinContent = ({
+const GenerateContent = ({
   setSearchSchoolOpen,
-  setJoinData,
-  joinData,
-}: JoinContentsPropsType) => {
+  setGenerateData,
+  generateData,
+}: GenerateContentsPropsType) => {
   const navigate = useNavigate();
-  const { join } = JoinFeature({ setJoinData, joinData });
+  const { generate } = GenerateFeature({ setGenerateData, generateData });
 
   const onChange = (e: ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
-    setJoinData({ ...joinData, [name]: value });
+    setGenerateData({ ...generateData, [name]: value });
   };
 
   return (
-    <S.JoinContent>
+    <S.GenerateContent>
       <S.Wrap>
         <S.Title>학생회 계정 생성</S.Title>
         <S.InputWrap>
@@ -30,7 +30,7 @@ const JoinContent = ({
             placeholder="학생회 아이디를 입력해주세요"
             type="text"
             name="username"
-            value={joinData.username}
+            value={generateData.username}
             onChange={onChange}
           />
           <Input
@@ -38,7 +38,7 @@ const JoinContent = ({
             placeholder="비밀번호를 입력해주세요"
             type="password"
             name="password"
-            value={joinData.password}
+            value={generateData.password}
             onChange={onChange}
           />
           <Input
@@ -46,7 +46,7 @@ const JoinContent = ({
             placeholder="비밀번호를 다시 입력해주세요"
             type="password"
             name="rePassword"
-            value={joinData.rePassword}
+            value={generateData.rePassword}
             onChange={onChange}
           />
           <SearchInput
@@ -55,13 +55,12 @@ const JoinContent = ({
             placeholder="학교를 입력해주세요"
             type="text"
             name="schoolId"
-            value={joinData.schoolName}
             onFocus={() => setSearchSchoolOpen(false)}
           />
         </S.InputWrap>
         <S.ButtonWrap>
           <Button
-            onClick={join}
+            onClick={generate}
             option="FILLED"
             padding="12px 22px"
             width="50%"
@@ -76,8 +75,8 @@ const JoinContent = ({
           />
         </S.ButtonWrap>
       </S.Wrap>
-    </S.JoinContent>
+    </S.GenerateContent>
   );
 };
 
-export default JoinContent;
+export default GenerateContent;

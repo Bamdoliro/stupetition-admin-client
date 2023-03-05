@@ -23,7 +23,7 @@ export const LoginFeature = ({ loginData }: LoginFeatureType) => {
       localStorage.setItem(ACCESS_KEY, accessToken);
       localStorage.setItem(REFRESH_KEY, refreshToken);
       setUserData({ accessToken, refreshToken, authority });
-      navigate('/main/genrator');
+      navigate('/main/genrate');
     },
     onError: (err) => {
       console.log(err);

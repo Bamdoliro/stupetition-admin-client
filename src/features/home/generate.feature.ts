@@ -1,18 +1,21 @@
 import { useMutation } from 'react-query';
-import { joinStudentCouncil } from 'apis/join.api';
+import { generateStudentCouncil } from 'apis/generate.api';
 import { useNavigate } from 'react-router-dom';
 import { Dispatch, SetStateAction } from 'react';
-import { JoinType } from 'types/auth.type';
+import { GenerateType } from 'types/auth.type';
 
-interface JoinFeatureType {
-  setJoinData: Dispatch<SetStateAction<JoinType>>;
-  joinData: JoinType;
+interface GenerateFeatureType {
+  setGenerateData: Dispatch<SetStateAction<GenerateType>>;
+  generateData: GenerateType;
 }
 
-export const JoinFeature = ({ setJoinData, joinData }: JoinFeatureType) => {
+export const GenerateFeature = ({
+  setGenerateData,
+  generateData,
+}: GenerateFeatureType) => {
   const navigate = useNavigate();
 
-  const { mutate } = useMutation(joinStudentCouncil, {
+  const { mutate } = useMutation(generateStudentCouncil, {
     onSuccess: () => {
       alert('회원가입 성공');
       navigate('/login');
@@ -22,18 +25,18 @@ export const JoinFeature = ({ setJoinData, joinData }: JoinFeatureType) => {
     },
   });
 
-  const join = () => {
-    const { password, rePassword, schoolId } = joinData;
+  const generate = () => {
+    const { password, rePassword, schoolId } = generateData;
     if (password === rePassword) {
       if (schoolId !== 0) {
-        mutate(joinData);
+        mutate(generateData);
       } else {
         alert('학교를 선택 해주세요');
       }
     } else {
       alert('비밀번호가 맞지 않습니다');
     }
-    setJoinData({
+    setGenerateData({
       username: '',
       password: '',
       rePassword: '',
@@ -42,5 +45,5 @@ export const JoinFeature = ({ setJoinData, joinData }: JoinFeatureType) => {
     });
   };
 
-  return { join };
+  return { generate };
 };

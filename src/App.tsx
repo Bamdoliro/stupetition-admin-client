@@ -1,7 +1,7 @@
 import Login from 'components/layout/auth/Login';
 import CreateSchool from 'components/layout/home/CreateSchool';
-import Join from 'components/layout/home/Join';
-import Main from 'components/layout/home/Main';
+import Generate from 'components/layout/home/Generate';
+import Main from 'layouts/MainLayout';
 import { Route, Routes } from 'react-router-dom';
 
 const App = () => {
@@ -9,7 +9,7 @@ const App = () => {
     <Routes>
       <Route path="/" element={<Login />} />
       <Route path="/main" element={<Main />}>
-        <Route path="/main/genrator" element={<Join />} />
+        <Route path="/main/genrate" element={<Generate />} />
         <Route path="/main/create/school" element={<CreateSchool />} />
       </Route>
     </Routes>
