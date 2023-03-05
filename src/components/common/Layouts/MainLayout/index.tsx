@@ -1,7 +1,7 @@
 import { Outlet } from 'react-router-dom';
 import * as S from './style';
 
-const Main = () => {
+const MainLayout = () => {
   return (
     <S.MainLayout>
       <S.Wrap>
@@ -13,4 +13,4 @@ const Main = () => {
   );
 };
 
-export default Main;
+export default MainLayout;
