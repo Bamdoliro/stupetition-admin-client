@@ -4,6 +4,7 @@ import SearchInput from 'components/common/SearchInput';
 import Button from 'components/common/Button';
 import { JoinFeature } from 'features/home/join.feature';
 import { ChangeEvent } from 'react';
+import { useNavigate } from 'react-router-dom';
 import * as S from './style';
 
 const JoinContent = ({
@@ -11,6 +12,7 @@ const JoinContent = ({
   setJoinData,
   joinData,
 }: JoinContentsPropsType) => {
+  const navigate = useNavigate();
   const { join } = JoinFeature({ setJoinData, joinData });
 
   const onChange = (e: ChangeEvent<HTMLInputElement>) => {
@@ -57,13 +59,22 @@ const JoinContent = ({
             onFocus={() => setSearchSchoolOpen(false)}
           />
         </S.InputWrap>
-        <Button
-          onClick={join}
-          option="FILLED"
-          padding="12px 22px"
-          width="174px"
-          value="회원가입"
-        />
+        <S.ButtonWrap>
+          <Button
+            onClick={join}
+            option="FILLED"
+            padding="12px 22px"
+            width="50%"
+            value="계정 생성"
+          />
+          <Button
+            onClick={() => navigate('/main/create/school')}
+            option="UNFILLED"
+            width="50%"
+            padding="12px 22px"
+            value="학교 생성 바로가기"
+          />
+        </S.ButtonWrap>
       </S.Wrap>
     </S.JoinContent>
   );

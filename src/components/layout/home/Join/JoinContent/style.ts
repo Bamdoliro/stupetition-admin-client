@@ -26,3 +26,9 @@ export const InputWrap = styled.div`
   gap: 28px;
   width: 100%;
 `;
+
+export const ButtonWrap = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 12px;
+`;
