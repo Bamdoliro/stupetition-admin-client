@@ -1,16 +1,16 @@
 import { Outlet } from 'react-router-dom';
 import * as S from './style';
 
-const MainLayout = () => {
+const BaseLayout = () => {
   return (
-    <S.MainLayout>
+    <S.BaseLayout>
       <S.Wrap>
         <S.MainBox>
           <Outlet />
         </S.MainBox>
       </S.Wrap>
-    </S.MainLayout>
+    </S.BaseLayout>
   );
 };
 
-export default MainLayout;
+export default BaseLayout;

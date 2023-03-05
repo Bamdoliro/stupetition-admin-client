@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import { color } from 'styles/theme.style';
 
-export const MainLayout = styled.div`
+export const BaseLayout = styled.div`
   width: 100vw;
   height: 100vh;
   background-color: ${color.gray300};
