@@ -21,7 +21,7 @@ const JoinContent = ({
   return (
     <S.JoinContent>
       <S.Wrap>
-        <S.Title>학생회 회원가입</S.Title>
+        <S.Title>학생회 계정 생성</S.Title>
         <S.InputWrap>
           <Input
             desc="학생회 아이디 입력"

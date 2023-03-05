@@ -1,10 +1,15 @@
 import Login from 'components/layout/auth/Login';
+import Join from 'components/layout/home/Join';
+import Main from 'components/layout/home/Main';
 import { Route, Routes } from 'react-router-dom';
 
 const App = () => {
   return (
     <Routes>
       <Route path="/" element={<Login />} />
+      <Route path="/main" element={<Main />}>
+        <Route path="/main/genrator" element={<Join />} />
+      </Route>
     </Routes>
   );
 };
