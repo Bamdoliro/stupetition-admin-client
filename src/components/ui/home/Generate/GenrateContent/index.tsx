@@ -55,6 +55,7 @@ const GenerateContent = ({
             placeholder="학교를 입력해주세요"
             type="text"
             name="schoolId"
+            value={generateData.schoolName}
             onFocus={() => setSearchSchoolOpen(false)}
           />
         </S.InputWrap>

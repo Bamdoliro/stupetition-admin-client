@@ -13,12 +13,9 @@ export const GenerateFeature = ({
   setGenerateData,
   generateData,
 }: GenerateFeatureType) => {
-  const navigate = useNavigate();
-
   const { mutate } = useMutation(generateStudentCouncil, {
     onSuccess: () => {
       alert('회원가입 성공');
-      navigate('/login');
     },
     onError: (err) => {
       console.log(err);

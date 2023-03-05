@@ -1,6 +1,6 @@
-import Login from 'components/layout/auth/Login';
-import CreateSchool from 'components/layout/home/CreateSchool';
-import Generate from 'components/layout/home/Generate';
+import Login from 'components/ui/auth/Login';
+import CreateSchool from 'components/ui/home/CreateSchool';
+import Generate from 'components/ui/home/Generate';
 import Main from 'layouts/MainLayout';
 import { Route, Routes } from 'react-router-dom';
 
