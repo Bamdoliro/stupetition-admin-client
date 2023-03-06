@@ -11,6 +11,7 @@ export const UnfilledButtonText = styled(T.H5)`
 `;
 
 export const FilledButton = styled.button`
+  padding: 12px 22px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -22,6 +23,7 @@ export const FilledButton = styled.button`
 `;
 
 export const UnfilledButton = styled.button`
+  padding: 12px 22px;
   display: flex;
   align-items: center;
   justify-content: center;
