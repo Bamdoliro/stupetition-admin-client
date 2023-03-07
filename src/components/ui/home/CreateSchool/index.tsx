@@ -43,7 +43,6 @@ const CreateSchool = () => {
         <Button
           onClick={create}
           option="FILLED"
-          padding="12px 22px"
           width="174px"
           value="학교 생성"
         />

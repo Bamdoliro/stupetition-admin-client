@@ -63,7 +63,6 @@ const GenerateContent = ({
           <Button
             onClick={generate}
             option="FILLED"
-            padding="12px 22px"
             width="50%"
             value="계정 생성"
           />
@@ -71,7 +70,6 @@ const GenerateContent = ({
             onClick={() => navigate('/main/create/school')}
             option="UNFILLED"
             width="50%"
-            padding="12px 22px"
             value="학교 생성 바로가기"
           />
         </S.ButtonWrap>

@@ -60,18 +60,11 @@ const SchoolContent = ({
           })}
         </S.SchoolWrap>
         <S.ButtonWrap>
-          <Button
-            option="UNFILLED"
-            width="50%"
-            padding="12px 22px"
-            value="취소"
-            onClick={cancel}
-          />
+          <Button option="UNFILLED" width="50%" value="취소" onClick={cancel} />
           <Button
             onClick={() => setSearchSchoolOpen(true)}
             option="FILLED"
             width="50%"
-            padding="12px 22px"
             value="완료"
           />
         </S.ButtonWrap>
