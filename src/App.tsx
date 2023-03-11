@@ -1,8 +1,8 @@
+import { Route, Routes } from 'react-router-dom';
 import Login from 'components/ui/auth/Login';
 import CreateSchool from 'components/ui/home/CreateSchool';
 import Generate from 'components/ui/home/Generate';
 import BaseLayout from 'layouts/BaseLayout';
-import { Route, Routes } from 'react-router-dom';
 
 const App = () => {
   return (
