@@ -9,14 +9,13 @@ const SearchInput = ({
   name,
   value,
   width,
-  height,
   onChange,
   onFocus,
 }: InputPropsType) => {
   return (
     <div>
       {desc && <S.Desc>{desc}</S.Desc>}
-      <S.SearchInput style={{ width, height }}>
+      <S.SearchInput style={{ width }}>
         <S.Img src={SearchSvg} />
         <S.Input
           placeholder={placeholder}
