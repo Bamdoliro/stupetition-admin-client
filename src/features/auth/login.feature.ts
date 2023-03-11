@@ -18,8 +18,11 @@ export const LoginFeature = ({ loginData }: LoginFeatureType) => {
 
   const loginMutate = useMutation(loginUser, {
     onSuccess: (res) => {
-      const { accessToken, refreshToken } = res;
-      const { authority } = res.user;
+      const {
+        accessToken,
+        refreshToken,
+        user: { authority },
+      } = res;
       localStorage.setItem(AUTHORITY, authority);
       localStorage.setItem(ACCESS_KEY, accessToken);
       localStorage.setItem(REFRESH_KEY, refreshToken);
