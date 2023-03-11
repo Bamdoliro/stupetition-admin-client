@@ -32,8 +32,6 @@ const SchoolContent = ({
     });
   };
 
-  console.log(data);
-
   return (
     <S.SchoolContent>
       <S.Wrap>
