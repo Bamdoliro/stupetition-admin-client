@@ -9,7 +9,7 @@ interface SchoolType {
 }
 
 export const SchoolFeature = (searchWord: string) => {
-  const { data, isLoading } = useQuery<SchoolType[]>(
+  const { data, isLoading, isError } = useQuery<SchoolType[]>(
     [KEY.SCHOOL_LIST, searchWord],
     () => searchSchool(searchWord),
     {
@@ -18,5 +18,5 @@ export const SchoolFeature = (searchWord: string) => {
     },
   );
 
-  return { data: data || [], isLoading };
+  return { data: data || [], isLoading, isError };
 };

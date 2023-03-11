@@ -4,6 +4,7 @@ import { ChangeEvent, useState } from 'react';
 import { GenerateContentsPropsType } from 'types/auth.type';
 import { SchoolFeature } from 'features/home/school.feature';
 import Loading from 'pages/Loading';
+import NotFound from 'pages/404';
 import SchoolList from './SchoolList';
 import * as S from './style';
 
@@ -13,7 +14,7 @@ const SchoolContent = ({
   generateData,
 }: GenerateContentsPropsType) => {
   const [searchWord, setSearchWord] = useState('');
-  const { data, isLoading } = SchoolFeature(searchWord);
+  const { data, isLoading, isError } = SchoolFeature(searchWord);
 
   const handleClickRadio = (e: ChangeEvent<HTMLInputElement>) => {
     const schoolName = e.target.id;
@@ -44,6 +45,7 @@ const SchoolContent = ({
           onChange={(e) => setSearchWord(e.target.value)}
         />
         <S.SchoolWrap>
+          {isError && <NotFound />}
           {isLoading && <Loading />}
           {data.map((item) => {
             return (
