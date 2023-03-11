@@ -1,8 +1,8 @@
 import { useMutation } from 'react-query';
 import { generateStudentCouncil } from 'apis/generate.api';
-import { useNavigate } from 'react-router-dom';
 import { Dispatch, SetStateAction } from 'react';
 import { GenerateType } from 'types/auth.type';
+import { useErrorToast, useSuccesToast } from 'hooks/useToast';
 
 interface GenerateFeatureType {
   setGenerateData: Dispatch<SetStateAction<GenerateType>>;
@@ -15,7 +15,7 @@ export const GenerateFeature = ({
 }: GenerateFeatureType) => {
   const { mutate } = useMutation(generateStudentCouncil, {
     onSuccess: () => {
-      alert('회원가입 성공');
+      useSuccesToast('회원가입 성공');
     },
     onError: (err) => {
       console.log(err);
@@ -28,10 +28,10 @@ export const GenerateFeature = ({
       if (schoolId !== 0) {
         mutate(generateData);
       } else {
-        alert('학교를 선택 해주세요');
+        useErrorToast('학교를 선택 해주세요');
       }
     } else {
-      alert('비밀번호가 맞지 않습니다');
+      useErrorToast('비밀번호가 맞지 않습니다');
     }
     setGenerateData({
       username: '',
